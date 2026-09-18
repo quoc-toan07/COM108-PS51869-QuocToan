@@ -1,37 +1,17 @@
 #include <stdio.h>
-const int SIZE = 20;
-const int HE_SO = 2;
-
 int main()
 {
-  char mssv[SIZE];
-  char fullName[SIZE];
-  float math;
-  float physics;
-  float chemistry;
+  char mssv[10] = "PS51869";
+  char fullName[20] = "Tran Quoc Toan";
+  float toan = 5.6;
+  float ly = 4.5;
+  float hoa = 5.9;
 
-  printf("Mssv:");
-  scanf("%s", mssv);
+  float dtb = ((toan * 2) + ly + hoa) / (float)4;
 
-  printf("Fullname:");
-  scanf(" %[^\n]", fullName);
-
-  printf("Math score:");
-  scanf("%f", &math);
-
-  printf("Physics score:");
-  scanf("%f", &physics);
-
-  printf("Chemistry score:");
-  scanf("%f", &chemistry);
-
-  float avg = (((float)math * HE_SO) + (float)physics + (float)chemistry) / (float)4;
-
-  printf("-------\n");
-
-  printf("Mssv: %s\n", mssv);
-  printf("Fullname: %s\n", fullName);
-  printf("Average score: %.2f\n", avg);
+  printf("Ma so sinh vien: %s\n", mssv);
+  printf("Ho va ten: %s\n", fullName);
+  printf("Diem trung binh: %.2f\n", dtb);
 
   return 0;
 }
