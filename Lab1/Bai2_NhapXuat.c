@@ -1,9 +1,8 @@
 #include <stdio.h>
-#include <time.h>
 
 int main() {
   const int SIZE = 20;
-
+  
   char mssv[SIZE];
   char fullName[SIZE];
   int yearOfBirdth;
@@ -20,10 +19,7 @@ int main() {
 
   printf("Year of birdth:");
   scanf("%d", &yearOfBirdth);
-  time_t now = time(NULL);
-  struct tm *t = localtime(&now);
-  int currentYear = t -> tm_year + 1900;
-  int age = currentYear - yearOfBirdth;
+  int age = 2026 - yearOfBirdth;
 
   printf("------- \n");
 

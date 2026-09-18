@@ -38,7 +38,5 @@ int main() {
   printf("Fullname: %s", fullName);
   printf("Average score: %.2f\n", avg);
 
-
-
   return 0;
 }
