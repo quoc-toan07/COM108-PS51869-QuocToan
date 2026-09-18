@@ -1,7 +1,6 @@
-#include <stdio.h> 
-// #include<stdlib.h>
-
-int main() {
+#include <stdio.h>
+int main()
+{
   const int SIZE = 20;
   const int HE_SO = 2;
 
@@ -12,25 +11,21 @@ int main() {
   float chemistry;
 
   printf("Mssv:");
-  fgets(mssv, sizeof(mssv), stdin);
+  scanf("%s", mssv);
 
   printf("Fullname:");
-  fgets(fullName, sizeof(fullName), stdin);
+  scanf(" %[^\n]", fullName);
 
   printf("Math score:");
   scanf("%f", &math);
 
   printf("Physics score:");
   scanf("%f", &physics);
-  
+
   printf("Chemistry score:");
   scanf("%f", &chemistry);
 
-  float avg = (
-    ((float)math * HE_SO) 
-    + (float)physics 
-    + (float)chemistry) 
-    / (float)4;
+  float avg = (((float)math * HE_SO) + (float)physics + (float)chemistry) / (float)4;
 
   printf("-------\n");
 

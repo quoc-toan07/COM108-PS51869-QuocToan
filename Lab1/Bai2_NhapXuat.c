@@ -1,35 +1,28 @@
 #include <stdio.h>
-#include <time.h>
-
 int main()
 {
-  const int SIZE = 20;
-
-  char mssv[SIZE];
-  char fullName[SIZE];
+  char mssv[10];
+  char fullName[20];
   int yearOfBirdth;
   float averageScore;
 
   printf("Mssv:");
-  fgets(mssv, sizeof(mssv), stdin);
+  scanf("%s", mssv);
 
   printf("Fullname:");
-  fgets(fullName, sizeof(fullName), stdin);
+  scanf(" %[^\n]", fullName);
 
   printf("Average score:");
   scanf("%f", &averageScore);
 
   printf("Year of birdth:");
   scanf("%d", &yearOfBirdth);
-  time_t now = time(NULL);
-  struct tm *t = localtime(&now);
-  int currentYear = t->tm_year + 1900;
-  int age = currentYear - yearOfBirdth;
+  int age = 2026 - yearOfBirdth;
 
   printf("------- \n");
 
-  printf("Mssv: %s", mssv);
-  printf("Fullname: %s", fullName);
+  printf("Mssv: %s\n", mssv);
+  printf("Fullname: %s\n", fullName);
   printf("Average score: %.2f\n", averageScore);
   printf("Age: %d\n", age);
 
