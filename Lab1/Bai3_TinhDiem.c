@@ -1,9 +1,9 @@
 #include <stdio.h>
+const int SIZE = 20;
+const int HE_SO = 2;
+
 int main()
 {
-  const int SIZE = 20;
-  const int HE_SO = 2;
-
   char mssv[SIZE];
   char fullName[SIZE];
   float math;
@@ -29,8 +29,8 @@ int main()
 
   printf("-------\n");
 
-  printf("Mssv: %s", mssv);
-  printf("Fullname: %s", fullName);
+  printf("Mssv: %s\n", mssv);
+  printf("Fullname: %s\n", fullName);
   printf("Average score: %.2f\n", avg);
 
   return 0;
