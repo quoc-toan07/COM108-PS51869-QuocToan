@@ -1,34 +1,18 @@
 #include <stdio.h>
 int main()
 {
-  char mssv[10];
-  char fullName[20];
-  int yearOfBirdth;
-  float averageScore;
+  char mssv[10] = "PS51869";
+  char fullName[20] = "Tran Quoc Toan";
+  int year = 1999;
+  float dtb = 9.4;
 
-  printf("Mssv:");
-  scanf("%s", mssv);
+  int age = 2026 - year;
 
-  printf("Fullname:");
-  scanf(" %[^\n]", fullName);
-
-  printf("Average score:");
-  scanf("%f", &averageScore);
-
-  printf("Year of birdth:");
-  scanf("%d", &yearOfBirdth);
-  int age = 2026 - yearOfBirdth;
-
-  printf("------- \n");
-
-  printf("Mssv: %s\n", mssv);
-  printf("Fullname: %s\n", fullName);
-  printf("Average score: %.2f\n", averageScore);
-  printf("Age: %d\n", age);
+  printf("Ma so sinh vien: %s\n", mssv);
+  printf("Ho va ten: %s\n", fullName);
+  printf("Nam sinh: %d\n", year);
+  printf("Tuoi: %d\n", age);
+  printf("Diem Trung Binh: %.2f\n", dtb);
 
   return 0;
 }
-
-/*
-
-*/
