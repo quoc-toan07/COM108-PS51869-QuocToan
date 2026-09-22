@@ -1,6 +1,6 @@
-### Tổng hợp video bài tập Lab1
+### Tổng hợp video bài tập Lab2
 
 - Bài 1: https://youtu.be/fAZoNbm6dc0
 - Bài 2: https://youtu.be/ETSCCS6OrFg
 - Bài 3: https://youtu.be/VLGpwba9G7M
-- Bài 4:
+- Bài 4: https://youtu.be/mtzQt3Eroyo
