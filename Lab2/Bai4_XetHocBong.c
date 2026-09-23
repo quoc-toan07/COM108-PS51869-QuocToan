@@ -2,27 +2,36 @@
 int main()
 {
   float dtb;
+  int hanhKiem, chuyenDoiDtb, ketQuaXetTN;
+
   printf("Nhap diem trung binh: ");
   scanf("%f", &dtb);
 
-  int hanhKiem;
-  printf("Nhap ham kiem(1- tot | 0-khac): ");
+  printf("Nhap hanh kiem: ");
   scanf("%d", &hanhKiem);
 
-  printf("--------\n");
-
-  if (dtb >= 8 && hanhKiem == 1)
+  if (dtb >= 8)
   {
-    printf("Dieu kien diem trung binh >= 8: %d\n", 1);
-    printf("Dieu kien hanh kiem tot: %d\n", 1);
-    printf("Ket qua xet hoc bong: %d\n", 1);
+    chuyenDoiDtb = 1;
   }
   else
   {
-    printf("Dieu kien diem trung binh >= 8: %d\n", 0);
-    printf("Dieu kien hanh kiem tot: %d\n", 0);
-    printf("Ket qua xet hoc bong: %d\n", 0);
+    chuyenDoiDtb = 0;
   }
+
+  if (chuyenDoiDtb == 1 && hanhKiem == 1)
+  {
+    ketQuaXetTN = 1;
+  }
+  else
+  {
+    ketQuaXetTN = 0;
+  }
+
+  printf("-----\n");
+  printf("Dieu kien diem trung binh >= 8: %d\n", chuyenDoiDtb);
+  printf("Dieu kien hanh kiem tot: %d\n", hanhKiem);
+  printf("Ket qua xet hoc bong: %d\n", ketQuaXetTN);
 
   return 0;
 }

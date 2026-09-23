@@ -14,4 +14,4 @@ int main()
   printf("Nghiem cua phuong trinh la: x = %.2f", x);
 
   return 0;
-}
+} 
