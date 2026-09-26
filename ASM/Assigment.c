@@ -1,16 +1,63 @@
 #include <stdio.h>
-void menu();
+void printMenu();
+
 int main()
 {
-  menu();
+  printMenu();
+  int luaChon;
+
+  do
+  {
+    printf("Nhap lua chon cua ban: ");
+    scanf("%d", &luaChon);
+
+    switch (luaChon)
+    {
+    case 0:
+      printf("Tam biet\n");
+      break;
+    case 1:
+      printf("BAN CHON CHUC NANG: Kiem tra so nguyen\n");
+      break;
+    case 2:
+      printf("BAN CHON CHUC NANG: Tim uoc chung va boi chung cua 2 so\n");
+      break;
+    case 3:
+      printf("BAN CHON CHUC NANG: Chuong trinh tinh tien quan Karaoke\n");
+      break;
+    case 4:
+      printf("BAN CHON CHUC NANG: Tinh tien dien\n");
+      break;
+    case 5:
+      printf("BAN CHON CHUC NANG: Doi tien\n");
+      break;
+    case 6:
+      printf("BAN CHON CHUC NANG: Tinh lai xuat vay ngan hang/vay tra gop\n");
+      break;
+    case 7:
+      printf("BAN CHON CHUC NANG: Vay tien mua xe\n");
+      break;
+    case 8:
+      printf("BAN CHON CHUC NANG: Sap xep thong tin sinh vien\n");
+      break;
+    case 9:
+      printf("BAN CHON CHUC NANG: Game POLY-LOTT\n");
+      break;
+    case 10:
+      printf("BAN CHON CHUC NANG: Chuong trinh tinh toan phan so\n");
+      break;
+    default:
+      printf("Chua co chua nang lua chon\n");
+      break;
+    }
+  } while (luaChon != 0);
+
   return 0;
 }
 
-void menu()
+void printMenu()
 {
   printf("MENU CHUC NANG\n");
-  printf("-------------------------------\n");
-
   printf("0. Thoat.\n");
   printf("1. Kiem tra so nguyen.\n");
   printf("2. Tim uoc chung va boi chung cua 2 so.\n");
@@ -22,69 +69,4 @@ void menu()
   printf("8. Sap xep thong tin sinh vien.\n");
   printf("9. Game POLY-LOTT.\n");
   printf("10. Chuong trinh tinh toan phan so.\n");
-
-  printf("-------------------------------\n");
-
-  int chucNang;
-  printf("Nhap vao chuc nang ban muon thuc hien:");
-  scanf("%d", &chucNang);
-
-  switch (chucNang)
-  {
-  case 1:
-  {
-    printf("%d", chucNang);
-    break;
-  }
-  case 2:
-  {
-    printf("%d", chucNang);
-    break;
-  }
-  case 3:
-  {
-    printf("%d", chucNang);
-    break;
-  }
-  case 4:
-  {
-    printf("%d", chucNang);
-    break;
-  }
-  case 5:
-  {
-    printf("%d", chucNang);
-    break;
-  }
-  case 6:
-  {
-    printf("%d", chucNang);
-    break;
-  }
-  case 7:
-  {
-    printf("%d", chucNang);
-    break;
-  }
-  case 8:
-  {
-    printf("%d", chucNang);
-    break;
-  }
-  case 9:
-  {
-    printf("%d", chucNang);
-    break;
-  }
-  case 10:
-  {
-    printf("%d", chucNang);
-    break;
-  }
-  default:
-  {
-    printf("Chuc nang %d khong hop le", chucNang);
-    break;
-  }
-  }
 }
