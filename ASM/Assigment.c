@@ -1,5 +1,6 @@
 #include <stdio.h>
 void printMenu();
+void ktSoNguyen();
 
 int main()
 {
@@ -18,6 +19,7 @@ int main()
       break;
     case 1:
       printf("BAN CHON CHUC NANG: Kiem tra so nguyen\n");
+      ktSoNguyen();
       break;
     case 2:
       printf("BAN CHON CHUC NANG: Tim uoc chung va boi chung cua 2 so\n");
@@ -69,4 +71,19 @@ void printMenu()
   printf("8. Sap xep thong tin sinh vien.\n");
   printf("9. Game POLY-LOTT.\n");
   printf("10. Chuong trinh tinh toan phan so.\n");
+}
+
+void ktSoNguyen()
+{
+  int x;
+  printf("Nhap x: ");
+
+  if (!scanf("%d", &x))
+  {
+    printf("X kh phai la so nguyen\n");
+  }
+  else
+  {
+    printf("X la so nguyen\n");
+  }
 }
