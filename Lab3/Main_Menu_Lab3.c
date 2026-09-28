@@ -100,7 +100,16 @@ void ptBacHai()
 
 void tinhTienDien()
 {
-  printf("Test bai 4\n");
+  float tongKwh, tongTienDien;
+
+  printf("Nhap tong so kwh: ");
+  scanf("%f", &tongKwh);
+
+  if ()
+  {
+    /* code */
+  }
+
   /*
     tongKwh: 50
     temp = 0;
@@ -113,6 +122,5 @@ void tinhTienDien()
     if 50 < tongKwh <= 100 (&&)
      if tongKwh - 100 >= 0 => temp = tongKwh - 100;
      else tongTienDien += tongKwh * 1.678
-
   */
 }
