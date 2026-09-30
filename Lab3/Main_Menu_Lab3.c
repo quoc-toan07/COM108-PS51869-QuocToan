@@ -100,27 +100,48 @@ void ptBacHai()
 
 void tinhTienDien()
 {
-  float tongKwh, tongTienDien;
+  const int MAX50_UNIT = 50;
+  const int MAX100_UNIT = 100;
 
+  float tongKwh;
+  float tongTienDien = 0;
+  float phanDu = 0;
+
+  // Đề chưa rõ: Nếu input âm thì cách xử lý?
   printf("Nhap tong so kwh: ");
   scanf("%f", &tongKwh);
 
-  if ()
+  while (tongKwh < 0)
   {
-    /* code */
+    printf("So nhap vao khong hop le - nhap lai:");
+    scanf("%f", &tongKwh);
   }
-
-  /*
-    tongKwh: 50
-    temp = 0;
-    tongTienDien = 0;
-
-    if 0 <= tongKwh <= 50 (&&)
-     if tongKwh - 50 >= 0 => temp = tongKwh - 50
-     else tongTienDien += tongKwh * 1.678
-
-    if 50 < tongKwh <= 100 (&&)
-     if tongKwh - 100 >= 0 => temp = tongKwh - 100;
-     else tongTienDien += tongKwh * 1.678
-  */
+  // 80
+  if (tongKwh >= 0 || tongKwh < 50)
+  {
+    if (tongKwh <= MAX50_UNIT)
+    {
+      tongTienDien = tongKwh * 1.678;
+    }
+    else
+    {
+      phanDu = tongKwh - (float)MAX50_UNIT;
+      tongKwh -= phanDu;
+      tongTienDien = tongKwh * 1.678;
+    }
+  }
+  else if (tongKwh >= 50 || tongKwh <= 100)
+  {
+    phanDu -= (float)MAX50_UNIT;
+    if (phanDu <= MAX50_UNIT)
+    {
+      tongTienDien = phanDu * 1.734;
+    }
+    else
+    {
+    }
+  }
+  printf("tongKwh: %f\n", tongKwh);
+  printf("phanDu: %f\n", phanDu);
+  printf("tongTienDien: %f\n", tongTienDien);
 }
