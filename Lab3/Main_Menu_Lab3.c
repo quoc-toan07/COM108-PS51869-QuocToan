@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h>
+#include <math.h>
 
 void printMenu();
 void tinhHocLuc();
@@ -87,9 +87,10 @@ void tinhHocLuc()
 
 void ptBacHai()
 {
-  int a, b, c, x1, x2, Delta;
+  float a, b, c, x1, x2, Delta;
+
   printf("Nhap vao a, b, c: ");
-  scanf("%f%f%f", a, b, c);
+  scanf("%f%f%f", &a, &b, &c);
 
   if (a == 0)
   {
@@ -107,7 +108,7 @@ void ptBacHai()
     else
     {
       x1 = -c / b;
-      printf("Phuong trinh co nghiem duy nhat: x = %2.f\n", x1);
+      printf("Phuong trinh co nghiem duy nhat: x = %.2f\n", x1);
     }
   }
   else
@@ -132,55 +133,44 @@ void ptBacHai()
 
 void tinhTienDien()
 {
-  /*
-    1. Khai báo cố điện giá tiền ứng theo từng bậc
-    2. Số Kwh kh có lẻ
-    3. float * int -> tự ép kiểu về float
-  */
+  const float BAC1 = 1.678;
+  const float BAC2 = 1.734;
+  const float BAC3 = 2.014;
+  const float BAC4 = 2.536;
+  const float BAC5 = 2.834;
+  const float BAC6 = 2.927;
 
-  const int MAX50_UNIT = 50;
-  const int MAX100_UNIT = 100;
-
-  float tongKwh;
-  float tongTienDien = 0;
-  float phanDu = 0;
-
-  // Đề chưa rõ: Nếu input âm thì cách xử lý?
-  printf("Nhap tong so kwh: ");
-  scanf("%f", &tongKwh);
-
-  // Dùng do while tối ưu hơn.
-  while (tongKwh < 0)
+  int tongKwh;
+  float tongTien = 0;
+  do
   {
-    printf("So nhap vao khong hop le - nhap lai:");
-    scanf("%f", &tongKwh);
-  }
-  // 80
-  if (tongKwh >= 0 || tongKwh < 50)
+    printf("Nhap vao tong kwh: ");
+    scanf("%d", &tongKwh);
+  } while (tongKwh < 0);
+  if (tongKwh <= 50)
   {
-    if (tongKwh <= MAX50_UNIT)
-    {
-      tongTienDien = tongKwh * 1.678;
-    }
-    else
-    {
-      phanDu = tongKwh - (float)MAX50_UNIT;
-      tongKwh -= phanDu;
-      tongTienDien = tongKwh * 1.678;
-    }
+    tongTien = tongKwh * BAC1;
   }
-  else if (tongKwh >= 50 || tongKwh <= 100)
+  else if (tongKwh <= 100)
   {
-    phanDu -= (float)MAX50_UNIT;
-    if (phanDu <= MAX50_UNIT)
-    {
-      tongTienDien = phanDu * 1.734;
-    }
-    else
-    {
-    }
+    tongTien = 50 * BAC1 + (tongKwh - 50) * BAC2;
   }
-  printf("tongKwh: %f\n", tongKwh);
-  printf("phanDu: %f\n", phanDu);
-  printf("tongTienDien: %f\n", tongTienDien);
+  else if (tongKwh <= 200)
+  {
+    tongTien = 50 * BAC1 + 50 * BAC2 + (tongKwh - 100) * BAC3;
+  }
+  else if (tongKwh <= 300)
+  {
+    tongTien = 50 * BAC1 + 50 * BAC2 + 100 * BAC3 + (tongKwh - 200) * BAC4;
+  }
+  else if (tongKwh <= 400)
+  {
+    tongTien = 50 * BAC1 + 50 * BAC2 + 100 * BAC3 + 100 * BAC4 + (tongKwh - 300) * BAC5;
+  }
+  else
+  {
+    tongTien = 50 * BAC1 + 50 * BAC2 + 100 * BAC3 + 100 * BAC4 + 100 * BAC5 + (tongKwh - 400) * BAC6;
+  }
+
+  printf("Tong tien dien cho %dkwh la: %.2f dong\n", tongKwh, tongTien);
 }
