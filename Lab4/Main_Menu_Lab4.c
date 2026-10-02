@@ -89,6 +89,44 @@ void tinhTBC()
 
 void ktSoNguyenTo()
 {
+  /*
+    SỐ NGUYÊN TỐ
+    -Tiêu chí: >1 & %1==0 & %chính nó ==0
+    Progress:
+    1. n - nhập từ bàn phím
+    2. if n <= 1 => in ra kh phải số nguyên tố
+    3. else loop 1 -> n
+    4. đếm mấy lần chia hết
+    5. if đếm > 2 => in ra kh phải số nguyên tố
+    6. else in là số nguyên tố
+  */
+  int x;
+  int dem = 0;
+
+  printf("Nhap vao x: ");
+  scanf("%d", &x);
+  if (x < 2)
+  {
+    printf(">%d khong phai la so nguyen to.\n", x);
+  }
+  else
+  {
+    for (int i = 1; i <= x; i++)
+    {
+      if (x % i == 0)
+      {
+        dem++;
+      }
+    }
+    if (dem > 2)
+    {
+      printf(">%d khong phai la so nguyen to.\n", x);
+    }
+    else
+    {
+      printf(">%d la so nguyen to.\n", x);
+    }
+  }
 }
 
 void ktSoChinhPhuong()
