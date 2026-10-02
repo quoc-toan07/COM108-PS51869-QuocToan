@@ -1,6 +1,5 @@
 #include <stdio.h>
 void printMenu();
-void ktSoNguyen();
 
 int main()
 {
@@ -9,7 +8,7 @@ int main()
 
   do
   {
-    printf("Nhap lua chon cua ban: ");
+    printf("Nhap lua chon chuc nang: ");
     scanf("%d", &luaChon);
 
     switch (luaChon)
@@ -19,6 +18,7 @@ int main()
       break;
     case 1:
       printf("Kiem tra so nguyen\n");
+      ktSoNguyen();
       break;
     case 2:
       printf("Tim uoc chung va boi chung cua 2 so\n");
@@ -58,16 +58,29 @@ int main()
 
 void printMenu()
 {
-  printf("MENU CHUC NANG\n");
-  printf("0. Thoat.\n");
-  printf("1. Kiem tra so nguyen.\n");
-  printf("2. Tim uoc chung va boi chung cua 2 so.\n");
-  printf("3. Chuong trinh tinh tien quan Karaoke.\n");
-  printf("4. Tinh tien dien.\n");
-  printf("5. Chuc nang doi tien.\n");
-  printf("6. Chuc nang tinh lai xuat vay ngan hang/vay tra gop.\n");
-  printf("7. Vay tien mua xe.\n");
-  printf("8. Sap xep thong tin sinh vien.\n");
-  printf("9. Game POLY-LOTT.\n");
-  printf("10. Chuong trinh tinh toan phan so.\n");
+  printf("+------------------------------------------------------+\n");
+  printf("|                  MENU CHUC NANG                      |\n");
+  printf("+------------------------------------------------------+\n");
+  printf("| 0. Thoat.                                            |\n");
+  printf("|------------------------------------------------------|\n");
+  printf("| 1. Kiem tra so nguyen.                               |\n");
+  printf("|------------------------------------------------------|\n");
+  printf("| 2. Tim uoc chung va boi chung cua 2 so.              |\n");
+  printf("|------------------------------------------------------|\n");
+  printf("| 3. Chuong trinh tinh tien quan Karaoke.              |\n");
+  printf("|------------------------------------------------------|\n");
+  printf("| 4. Tinh tien dien.                                   |\n");
+  printf("|------------------------------------------------------|\n");
+  printf("| 5. Chuc nang doi tien.                               |\n");
+  printf("|------------------------------------------------------|\n");
+  printf("| 6. Chuc nang tinh lai xuat vay ngan hang/vay tra gop.|\n");
+  printf("|------------------------------------------------------|\n");
+  printf("| 7. Vay tien mua xe.                                  |\n");
+  printf("|------------------------------------------------------|\n");
+  printf("| 8. Sap xep thong tin sinh vien.                      |\n");
+  printf("|------------------------------------------------------|\n");
+  printf("| 9. Game POLY-LOTT.                                   |\n");
+  printf("|------------------------------------------------------|\n");
+  printf("| 10. Chuong trinh tinh toan phan so.                  |\n");
+  printf("+------------------------------------------------------+\n");
 }
