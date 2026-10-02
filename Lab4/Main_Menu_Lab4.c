@@ -131,4 +131,30 @@ void ktSoNguyenTo()
 
 void ktSoChinhPhuong()
 {
+  int x;
+  int flag = 0; // false
+
+  printf("Nhap x: ");
+  scanf("%d", &x);
+
+  if (x == 0)
+  {
+    printf("%d la so chinh phuong.\n", x);
+  }
+  else
+  {
+    for (int i = 1; i <= x; i++)
+    {
+      if (i * i == x)
+      {
+        printf("%d la so chinh phuong.\n", x);
+        flag = 1; // true
+        break;
+      }
+    }
+    if (!flag) //
+    {
+      printf("%d khong phai so chinh phuong.\n", x);
+    }
+  }
 }
