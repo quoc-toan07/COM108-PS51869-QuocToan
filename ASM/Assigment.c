@@ -18,34 +18,34 @@ int main()
       printf("Tam biet\n");
       break;
     case 1:
-      printf("BAN CHON CHUC NANG: Kiem tra so nguyen\n");
+      printf("Kiem tra so nguyen\n");
       break;
     case 2:
-      printf("BAN CHON CHUC NANG: Tim uoc chung va boi chung cua 2 so\n");
+      printf("Tim uoc chung va boi chung cua 2 so\n");
       break;
     case 3:
-      printf("BAN CHON CHUC NANG: Chuong trinh tinh tien quan Karaoke\n");
+      printf("Chuong trinh tinh tien quan Karaoke\n");
       break;
     case 4:
-      printf("BAN CHON CHUC NANG: Tinh tien dien\n");
+      printf("Tinh tien dien\n");
       break;
     case 5:
-      printf("BAN CHON CHUC NANG: Doi tien\n");
+      printf("Doi tien\n");
       break;
     case 6:
-      printf("BAN CHON CHUC NANG: Tinh lai xuat vay ngan hang/vay tra gop\n");
+      printf("Tinh lai xuat vay ngan hang/vay tra gop\n");
       break;
     case 7:
-      printf("BAN CHON CHUC NANG: Vay tien mua xe\n");
+      printf("Vay tien mua xe\n");
       break;
     case 8:
-      printf("BAN CHON CHUC NANG: Sap xep thong tin sinh vien\n");
+      printf("Sap xep thong tin sinh vien\n");
       break;
     case 9:
-      printf("BAN CHON CHUC NANG: Game POLY-LOTT\n");
+      printf("Game POLY-LOTT\n");
       break;
     case 10:
-      printf("BAN CHON CHUC NANG: Chuong trinh tinh toan phan so\n");
+      printf("Chuong trinh tinh toan phan so\n");
       break;
     default:
       printf("Chua co chua nang lua chon\n");
