@@ -27,11 +27,14 @@ int main()
       printf("Kiem tra So chinh phuong\n");
       ktSoChinhPhuong();
       break;
+    case 4:
+      printf("Thoat chuong trinh\n");
+      break;
     default:
       printf("Chi nhap vao 1 - 4!\n");
       break;
     }
-  } while (luaChon != 0);
+  } while (luaChon != 4);
 
   return 0;
 }
@@ -89,25 +92,15 @@ void tinhTBC()
 
 void ktSoNguyenTo()
 {
-  /*
-    SỐ NGUYÊN TỐ
-    -Tiêu chí: >1 & %1==0 & %chính nó ==0
-    Progress:
-    1. n - nhập từ bàn phím
-    2. if n <= 1 => in ra kh phải số nguyên tố
-    3. else loop 1 -> n
-    4. đếm mấy lần chia hết
-    5. if đếm > 2 => in ra kh phải số nguyên tố
-    6. else in là số nguyên tố
-  */
   int x;
   int dem = 0;
 
-  printf("Nhap vao x: ");
+  printf("Nhap x: ");
   scanf("%d", &x);
+
   if (x < 2)
   {
-    printf(">%d khong phai la so nguyen to.\n", x);
+    printf("%d khong phai la so nguyen to.\n", x);
   }
   else
   {
@@ -118,13 +111,13 @@ void ktSoNguyenTo()
         dem++;
       }
     }
-    if (dem > 2)
+    if (dem == 2)
     {
-      printf(">%d khong phai la so nguyen to.\n", x);
+      printf("%d la so nguyen to.\n", x);
     }
     else
     {
-      printf(">%d la so nguyen to.\n", x);
+      printf("%d khong phai la so nguyen to.\n", x);
     }
   }
 }
@@ -132,29 +125,33 @@ void ktSoNguyenTo()
 void ktSoChinhPhuong()
 {
   int x;
-  int flag = 0; // false
 
   printf("Nhap x: ");
   scanf("%d", &x);
 
-  if (x == 0)
+  if (x < 0)
   {
-    printf("%d la so chinh phuong.\n", x);
+    printf("%d khong phai la so chinh phuong.\n", x);
   }
   else
   {
-    for (int i = 1; i <= x; i++)
+    int flag = 0;
+    for (int i = 0; i <= x; i++)
     {
       if (i * i == x)
       {
-        printf("%d la so chinh phuong.\n", x);
-        flag = 1; // true
+        flag = 1;
         break;
       }
     }
-    if (!flag) //
+
+    if (!flag)
     {
-      printf("%d khong phai so chinh phuong.\n", x);
+      printf("%d khong phai la so chinh phuong.\n", x);
+    }
+    else
+    {
+      printf("%d la so chinh phuong.\n", x);
     }
   }
 }
