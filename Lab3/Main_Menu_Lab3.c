@@ -85,12 +85,14 @@ void tinhHocLuc()
   }
 }
 
-void ptBacHai()
+void giaiPTBacHai()
 {
-  float a, b, c, x1, x2, Delta;
+  printf("Giai phuong trinh bac hai\n");
+  int a, b, c;
+  float x1, x2 = 0;
 
-  printf("Nhap vao a, b, c: ");
-  scanf("%f%f%f", &a, &b, &c);
+  printf("Nhap vao a,b,c: ");
+  scanf("%d%d%d", &a, &b, &c);
 
   if (a == 0)
   {
@@ -98,35 +100,36 @@ void ptBacHai()
     {
       if (c == 0)
       {
-        printf("Phuong trinh vo so nghiem\n");
+        printf("Phuong trinh vo so nghiem.\n");
       }
       else
       {
-        printf("Phuong trinh vo nghiem\n");
+        printf("Phuong trinh vo nghiem.\n");
       }
     }
     else
     {
-      x1 = -c / b;
-      printf("Phuong trinh co nghiem duy nhat: x = %.2f\n", x1);
+      x1 = (float)-c / b;
+      printf("Phuong trinh co nghiem duy nhat: x =  %.0f\n", x1);
     }
   }
   else
   {
-    Delta = b * b - 4 * a * c;
-    if (Delta < 0)
+    int delta = b * b - 4 * a * c;
+    if (delta < 0)
     {
-      printf("Phuong trinh vo so nghiem\n");
+      printf("Phuong trinh vo so nghiem.\n");
     }
-    else if (Delta == 0)
+    else if (delta == 0)
     {
-      printf("Phuong trinh co nghiem kep: x1 = x2 = %.2f\n", Delta);
+      x1 = (float)-b / (2 * a);
+      printf("Phuong trinh co nghiem kep: x = %.0f\n", x1);
     }
     else
     {
-      x1 = (-b + sqrt(Delta)) / (2 * a);
-      x2 = (-b - sqrt(Delta)) / (2 * a);
-      printf("Phuong trinh co 2 nghiem phan biet: x1 =  %.2f, x2 = %.2f\n", x1, x2);
+      x1 = (float)(-b + sqrt(delta)) / (2 * a);
+      x2 = (float)(-b - sqrt(delta)) / (2 * a);
+      printf("Phuong trinh co 2 nghiem phan biet: x1 = %.0f, x2 = %.0f\n", x1, x2);
     }
   }
 }
