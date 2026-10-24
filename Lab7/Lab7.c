@@ -3,17 +3,52 @@
 #include <ctype.h>
 #include <conio.h>
 
+void printMenu();
 void demNguyenAmPhuAm();
 void dangNhap();
 
 int main()
 {
-  // demNguyenAmPhuAm();
-  // dangNhap();
-
+  int chon;
+  do
+  {
+    printMenu();
+    printf("Chon chuc nang: ");
+    scanf("%d", &chon);
+    while (getchar() != '\n')
+      ;
+    switch (chon)
+    {
+    case 1:
+      demNguyenAmPhuAm();
+      break;
+    case 2:
+      dangNhap();
+      break;
+    case 3:
+      printf("Sap xep chuoi theo chu cai\n");
+      break;
+    case 4:
+      printf("Doi so thap phan sang thap luc phan\n");
+      break;
+    case 5:
+      printf("Thoat chuong trinh\n");
+      break;
+    default:
+      printf("Vui long chon chuc hop le(1-5)\n");
+    }
+  } while (chon != 5);
   return 0;
 }
-
+void printMenu()
+{
+  printf("MENU CHUONG TRINH LAB 7\n");
+  printf("1. Dem nguyen am va phu am cua chuoi\n");
+  printf("2. Dang nhap bang Username va Password\n");
+  printf("3. Sap xep chuoi theo chu cai\n");
+  printf("4. Doi so thap phan sang thap luc phan\n");
+  printf("5. Thoat chuong trinh\n");
+}
 void demNguyenAmPhuAm()
 {
   char nguyenAm[] = "aeiou";
@@ -46,7 +81,7 @@ void demNguyenAmPhuAm()
       }
     }
   }
-  printf("Chuoi %s co chua: %d nguyen am va %d phu am.", str, demNgyenAm, demPhuAm);
+  printf("Chuoi %s co chua: %d nguyen am va %d phu am.\n", str, demNgyenAm, demPhuAm);
 }
 void dangNhap()
 {
