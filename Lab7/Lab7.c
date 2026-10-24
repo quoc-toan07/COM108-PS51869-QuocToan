@@ -30,6 +30,7 @@ int main()
       break;
     case 3:
       printf("Sap xep chuoi theo chu cai\n");
+      sapXepChuoi();
       break;
     case 4:
       printf("Doi so thap phan sang thap luc phan\n");
@@ -124,4 +125,31 @@ void dangNhap()
 }
 void sapXepChuoi()
 {
+  int n = 5;
+  int m = 20;
+  char str[n][m];
+  printf("Nhap vao chuoi:");
+  for (int i = 0; i < n; i++)
+  {
+    fgets(str[i], sizeof(str[i]), stdin);
+    str[i][strcspn(str[i], "\n")] = '\0';
+  }
+  for (int i = 0; i < n; i++)
+  {
+    for (int j = i + 1; j < n; j++)
+    {
+      if (strcmp(str[i], str[j]) > 0)
+      {
+        char tam[m];
+        strcpy(tam, str[i]);
+        strcpy(str[i], str[j]);
+        strcpy(str[j], tam);
+      }
+    }
+  }
+  printf("\nCac chuoi sau khi sap xep:\n");
+  for (int i = 0; i < n; i++)
+  {
+    printf("%s\n", str[i]);
+  }
 }
