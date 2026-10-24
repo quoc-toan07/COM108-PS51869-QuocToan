@@ -6,6 +6,7 @@
 void printMenu();
 void demNguyenAmPhuAm();
 void dangNhap();
+void sapXepChuoi();
 
 int main()
 {
@@ -20,9 +21,11 @@ int main()
     switch (chon)
     {
     case 1:
+      printf("Dem nguyen am & phu am cua 1 chuoi\n");
       demNguyenAmPhuAm();
       break;
     case 2:
+      printf("Dang nhap bang Username và Password\n");
       dangNhap();
       break;
     case 3:
@@ -118,4 +121,7 @@ void dangNhap()
   {
     printf("Dang nhap that bai!\n");
   }
+}
+void sapXepChuoi()
+{
 }

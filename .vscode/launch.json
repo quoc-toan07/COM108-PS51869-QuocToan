@@ -9,7 +9,7 @@
       "stopAtEntry": false,
       "externalConsole": true,
       "cwd": "d:/COM108-PS51869-QuocToan/Lap1",
-      "program": "d:/COM108-PS51869-QuocToan/Lap1/build/Debug/outDebug",
+      "program": "${fileDirname}/output/${fileBasenameNoExtension}.exe",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

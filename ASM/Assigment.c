@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <string.h>
 void printMenu();
+void chucNang01();
 
 int main()
 {
@@ -18,7 +20,7 @@ int main()
       break;
     case 1:
       printf("Kiem tra so nguyen\n");
-      ktSoNguyen();
+      chucNang01();
       break;
     case 2:
       printf("Tim uoc chung va boi chung cua 2 so\n");
@@ -83,4 +85,84 @@ void printMenu()
   printf("|------------------------------------------------------|\n");
   printf("| 10. Chuong trinh tinh toan phan so.                  |\n");
   printf("+------------------------------------------------------+\n");
+}
+
+void chucNang01()
+{
+  float x;
+  printf("Nhap x: ");
+  scanf("%f", &x);
+  int xConverted = (int)x;
+
+  if (x != 0)
+  {
+    if (x > 0)
+    {
+      if (x == xConverted)
+      {
+        printf("%.2f la so nguyen\n", x);
+        int demSNT = 0;
+        int demSCP = 0;
+        for (int i = 1; i <= x; i++)
+        {
+          // CHECK SNT
+          if (xConverted % i == 0)
+          {
+            demSNT++;
+          }
+          if (i * i == xConverted)
+          {
+            demSCP++;
+          }
+        }
+        if (demSNT == 2)
+        {
+          printf("%.2f la so nguyen to\n", x);
+        }
+        else
+        {
+          printf("%.2f khong phai so nguyen to\n", x);
+        }
+
+        if (demSCP > 0)
+        {
+          printf("%.2f la so chinh phuong\n", x);
+        }
+        else
+        {
+          printf("%.2f khong phai so chinh phuong\n", x);
+        }
+      }
+      else
+      {
+        printf("%.2f khong phai so nguyen\n", x);
+        printf("%.2f khong phai so nguyen to\n", x);
+        printf("%.2f khong phai so chinh phuong\n", x);
+      }
+    }
+    else
+    {
+
+      if (x == xConverted)
+      {
+        printf("%.2f la so nguyen\n", x);
+      }
+      else
+      {
+        printf("%.2f khong phai so nguyen\n", x);
+      }
+      printf("%.2f khong phai so nguyen to\n", x);
+      printf("%.2f khong phai so chinh phuong\n", x);
+    }
+  }
+  else
+  {
+    printf("%.2f la so nguyen\n", x);
+    printf("%.2f khong so nguyen to\n", x);
+    printf("%.2f la so chinh phuong\n", x);
+  }
+}
+
+void chucNang02()
+{
 }
