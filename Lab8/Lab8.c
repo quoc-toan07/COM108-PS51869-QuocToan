@@ -1,17 +1,20 @@
 #include <stdio.h>
 #include <string.h>
 
+struct SinhVien
+{
+  char mssv[50];
+  char tenSV[50];
+  char nganhHoc[50];
+  float diemTB;
+};
+
 void printMenu();
+void nhapXuatSV();
 
 int main()
 {
-  struct SinhVien
-  {
-    char mssv[50];
-    char tenSV[50];
-    char nganhHoc[50];
-    float diemTB;
-  };
+
   int chon;
   do
   {
@@ -24,6 +27,7 @@ int main()
     {
     case 1:
       printf("Nhap va xuat danh sach sinh vien\n");
+      nhapXuatSV();
       break;
     case 2:
       printf("Sap xep sinh vien theo diem tang dan\n");
@@ -54,4 +58,51 @@ void printMenu()
   printf("3. Tim kiem sinh vien theo MSSV\n");
   printf("4. Xuat sinh vien nhan hoc bong theo nganh\n");
   printf("5. Thoat chuong trinh\n");
+}
+void nhapXuatSV()
+{
+  int soLuong;
+  printf("So luong sv muon nhap vao: ");
+  scanf("%d", &soLuong);
+  while (getchar() != '\n')
+    ;
+  if (soLuong > 50)
+  {
+    printf("Khong vuot qua 50 sinh vien\n");
+    return;
+  }
+  struct SinhVien dssv[soLuong];
+  for (int i = 0; i < soLuong; i++)
+  {
+    printf("Nhap MSSV:");
+    fgets(dssv[i].mssv, sizeof(dssv[i]), stdin);
+    dssv[i].mssv[strcspn(dssv[i].mssv, "\n")] = '\0';
+
+    printf("Ten SV:");
+    fgets(dssv[i].tenSV, sizeof(dssv[i]), stdin);
+    dssv[i].tenSV[strcspn(dssv[i].tenSV, "\n")] = '\0';
+
+    printf("Nganh hoc:");
+    fgets(dssv[i].nganhHoc, sizeof(dssv[i]), stdin);
+    dssv[i].nganhHoc[strcspn(dssv[i].nganhHoc, "\n")] = '\0';
+
+    printf("Diem TB:");
+    scanf("%f", &dssv[i].diemTB);
+    while (getchar() != '\n')
+      ;
+    if (dssv[i].diemTB > 10.0 || dssv[i].diemTB < 0)
+    {
+      printf("Diem TB khong hop le: \n");
+      return;
+    }
+  }
+
+  for (int i = 0; i < soLuong; i++)
+  {
+    printf("Sinh vien thu: %d\n", i);
+    printf("MSSV: %s\n", dssv[i].mssv);
+    printf("Ten SV: %s\n", dssv[i].tenSV);
+    printf("Nganh hoc: %s\n", dssv[i].nganhHoc);
+    printf("Diem TB: %.2f\n", dssv[i].diemTB);
+  }
 }
