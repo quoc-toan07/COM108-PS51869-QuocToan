@@ -7,6 +7,7 @@ void printMenu();
 void demNguyenAmPhuAm();
 void dangNhap();
 void sapXepChuoi();
+void doiThapPhanSangThapLucPhan();
 
 int main()
 {
@@ -34,6 +35,7 @@ int main()
       break;
     case 4:
       printf("Doi so thap phan sang thap luc phan\n");
+      doiThapPhanSangThapLucPhan();
       break;
     case 5:
       printf("Thoat chuong trinh\n");
@@ -152,4 +154,43 @@ void sapXepChuoi()
   {
     printf("%s\n", str[i]);
   }
+}
+void doiThapPhanSangThapLucPhan()
+{
+  const char bangTra[] = "0123456789ABCDEF";
+  char hexa[20];
+  long long so;
+  int vt = 0;
+
+  printf("Nhap vao so nguyen khong am: ");
+  scanf("%lld", &so);
+  while (getchar() != '\n')
+    ;
+
+  if (so < 0)
+  {
+    printf("So nhap vao khong hop le!\n");
+    return;
+  }
+
+  long long goc = so;
+  if (so == 0)
+  {
+    hexa[vt++] = '0';
+  }
+  while (so > 0)
+  {
+    hexa[vt++] = bangTra[so % 16];
+    so = so / 16;
+  }
+  hexa[vt] = '\0';
+
+  int dai = strlen(hexa);
+  for (int i = 0; i < dai / 2; i++)
+  {
+    char tam = hexa[i];
+    hexa[i] = hexa[dai - 1 - i];
+    hexa[dai - 1 - i] = tam;
+  }
+  printf("So thap luc phan cua %lld la: %s\n", goc, hexa);
 }
